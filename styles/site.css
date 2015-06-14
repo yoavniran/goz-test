@@ -7,7 +7,7 @@ body {
 #site-container {
     position: relative;
     z-index: 1;
-    min-width: 400px;
+    min-width: 300px;
 }
 
 #site-logo {
@@ -191,6 +191,29 @@ header {
 
 }
 
+@media (max-height:400px){
+
+     .main-quote{
+         font-size:1.2em;
+     }
+
+      #site-title{
+         font-size:1.8em;
+         top:10px;
+     }
+      #home-content-container {
+          padding:10px 0;
+      }
+      header{
+          height:40px;
+      }
+  #site-logo{
+         width:130px;
+         height:140px;
+     }
+}
+
+
 @media (max-width:400px) {
      .main-quote{
          font-size:1.4em;
@@ -198,4 +221,15 @@ header {
      #site-title{
          font-size:2em;
      }
+
+     #site-logo{
+         width:130px;
+         height:140px;
+     }
+}
+
+@media (min-height: 800px) {
+    .main-quote:nth-child(2) {
+        margin-top: 120px;
+    }
 }
