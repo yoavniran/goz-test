@@ -8,23 +8,26 @@ body {
 #site-container {
     position: relative;
     z-index: 1;
+    min-width:400px;
 }
 
 #site-logo {
 
-    width: 230px;
+    float:right;
+    width: 210px;
     height: 260px;
     background-image: url("gozly-white-overlay-transparent-bg-small.png");
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 3s;
 }
 
 footer{
+    width:100%;
     bottom: 4px;
     right: 6px;
     position: fixed;
+        opacity: 0;
+    transition: opacity 3s;
 }
 
 #bgimg {
@@ -41,17 +44,24 @@ footer{
 }
 
 #menu-container{
+    float:left;
+    bottom: 8px;
+    right:80px;
     position:absolute;
-    /*opacity: 0;*/
-    /*transition: opacity 2s;*/
-    /*bottom:5%;*/
-
+    
     font-size:3em;
     font-weight: bold;
     color:white;
 
-    width:100%;
-    border-bottom: 2px #fff groove;
+    width:100%;    
+}
+#menu-container::after{
+    content:"";
+    width:200px; height:2px;
+    position:fixed;
+    right:0px;
+    bottom:10px;
+    background-color:rgb(242, 245, 246);
 }
 
 #menu-container ul{
@@ -63,4 +73,8 @@ footer{
     list-style: none;
     display: inline;
     margin-right:20px;
+}
+#menu-container li:hover{
+    text-decoration:underline;
+    cursor:pointer;
 }
