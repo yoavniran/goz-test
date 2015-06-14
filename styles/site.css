@@ -213,6 +213,15 @@ header {
      }
 }
 
+@media (max-height:300px) {
+    .main-quote:nth-child(1) {
+        right: 16%;
+    }
+
+    .main-quote:nth-child(2) {
+        right: 20%;        
+    }
+}
 
 @media (max-width:400px) {
      .main-quote{
