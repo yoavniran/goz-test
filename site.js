@@ -1,4 +1,12 @@
-﻿$("document").ready(function () {
+﻿window.addEventListener("load", function () {
+	// Set a timeout...
+	setTimeout(function () {
+		// Hide the address bar!
+		window.scrollTo(0, 1);
+	}, 0);
+});
+
+$("document").ready(function () {
 
     var siteContent = {
             about: {
@@ -19,7 +27,7 @@
 
         $("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
 
-        enableFullScreen();
+     //   enableFullScreen();
     }
 
     function copyMobileMenuItems() {
