@@ -78,7 +78,8 @@
         var target = e.target || e.srcElement;
 
         if (target !== ui.mobileMenu[0]) {
-            ui.mobileMenuContainer.toggleClass("mobile-menu-open", false);
+        	ui.mobileMenuContainer.toggleClass("mobile-menu-open", false);
+        	e.stopPropagation();
         }
     }
 
@@ -119,8 +120,10 @@
         }
     }
 
-    function onMobileMenuClick() {
-        ui.mobileMenuContainer.toggleClass("mobile-menu-open");
+    function onMobileMenuClick(e) {
+    	ui.mobileMenuContainer.toggleClass("mobile-menu-open");
+
+    	e.stopPropagation();
     }
 
     function onLogoClick() {

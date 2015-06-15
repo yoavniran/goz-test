@@ -227,14 +227,6 @@ li.main-menu-item.active:before{
     padding: 5% 12%;
 }
 
-/*#page-title {
-    position: relative;
-    height: 3em;
-    width: 200px;
-    margin-bottom: 10px;
-	text-shadow: 1px 1px 1px #0C1112;
-}*/
-
 #page-content-container h2 {
     margin: 0;
     position: relative;
