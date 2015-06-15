@@ -122,13 +122,22 @@
 	}
 }
 
-@media (max-height:300px) {
+@media (max-height:360px) {
 	.main-quote:nth-child(1) {
 		right: 16%;
 	}
 
 	.main-quote:nth-child(2) {
 		right: 20%;
+	}
+
+	#site-title {
+		font-size: 1.6em;
+		top: 4px;
+	}
+
+	.page-content {
+		max-height: 120px;
 	}
 }
 
