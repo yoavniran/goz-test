@@ -71,7 +71,16 @@
 
 @media (max-height:500px) {
 	.page-content {
-		max-height: 200px;
+		max-height: 160px;
+	}
+
+	.main-quote {
+		font-size: 1.3em;
+	}
+
+	#site-logo {
+		width: 120px;
+		height: 150px;
 	}
 }
 
@@ -82,8 +91,8 @@
 	}
 
 	.page-content {
-		max-height: 165px;
-		font-size: 1.2em;
+		max-height: 140px;
+		font-size: 1em;
 	}
 
 	#site-title {
@@ -102,6 +111,14 @@
 	#site-logo {
 		width: 100px;
 		height: 110px;
+	}
+
+	#mobile-menu{
+		font-size:1.5em;
+	}
+
+	.main-menu-item.mobile{
+		font-size:1.1em;
 	}
 }
 
@@ -133,11 +150,15 @@
 	#site-title {
 		font-size: 2.2em;
 	}
+
+	.main-quote {
+		font-size: 1.6em;
+	}
 }
 
 @media (max-width:400px) {
 	.main-quote {
-		font-size: 1.4em;
+		font-size: 1.5em;
 	}
 
 	#site-title {

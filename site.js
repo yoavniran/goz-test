@@ -1,36 +1,36 @@
-﻿(function (win) {
-	var doc = win.document;
+﻿//(function (win) {
+//	var doc = win.document;
 
-	// If there's a hash, or addEventListener is undefined, stop here
-	if (!win.navigator.standalone && !location.hash && win.addEventListener) {
+//	// If there's a hash, or addEventListener is undefined, stop here
+//	if (!win.navigator.standalone && !location.hash && win.addEventListener) {
 
-		//scroll to 1
-		win.scrollTo(0, 1);
-		var scrollTop = 1,
-			getScrollTop = function () {
-				return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
-			},
+//		//scroll to 1
+//		win.scrollTo(0, 1);
+//		var scrollTop = 1,
+//			getScrollTop = function () {
+//				return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+//			},
 
-			//reset to 0 on bodyready, if needed
-			bodycheck = setInterval(function () {
-				if (doc.body) {
-					clearInterval(bodycheck);
-					scrollTop = getScrollTop();
-					win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-				}
-			}, 15);
+//			//reset to 0 on bodyready, if needed
+//			bodycheck = setInterval(function () {
+//				if (doc.body) {
+//					clearInterval(bodycheck);
+//					scrollTop = getScrollTop();
+//					win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+//				}
+//			}, 15);
 
-		win.addEventListener("load", function () {
-			setTimeout(function () {
-				//at load, if user hasn't scrolled more than 20 or so...
-				if (getScrollTop() < 20) {
-					//reset to hide addr bar at onload
-					win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-				}
-			}, 0);
-		}, false);
-	}
-})(this);
+//		win.addEventListener("load", function () {
+//			setTimeout(function () {
+//				//at load, if user hasn't scrolled more than 20 or so...
+//				if (getScrollTop() < 20) {
+//					//reset to hide addr bar at onload
+//					win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+//				}
+//			}, 0);
+//		}, false);
+//	}
+//})(this);
 
 $("document").ready(function () {
 
@@ -52,8 +52,6 @@ $("document").ready(function () {
         registerEvents();
 
         $("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
-
-     //   enableFullScreen();
     }
 
     function copyMobileMenuItems() {
@@ -91,7 +89,7 @@ $("document").ready(function () {
     function doIntroAnimation() {
         setTimeout(function () {
 
-            var bgImgFilter = "blur(6px) contrast(60%) drop-shadow(16px 16px 10px rgb(159, 92, 231)) ";
+        	var bgImgFilter = "blur(6px) contrast(60%) drop-shadow(6px 10px 4px rgb(20, 220, 55)) ";
             $("#bgimg").css({"-webkit-filter": bgImgFilter, "filter": bgImgFilter});
 
             toggleDelayedElement(".intro-delayed", true);
@@ -168,33 +166,6 @@ $("document").ready(function () {
         toggleDelayedElement(ui.homeContent, true);
         toggleDelayedElement("#page-container", false, true);
         setActiveMenuItem(null);
-    }
-
-    function enableFullScreen() {
-    	window.scrollTo(0, 1);
-    	//if (!document.fullscreenElement &&    // alternative standard method
-		//	!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
-    	//	if (document.documentElement.requestFullscreen) {
-    	//		document.documentElement.requestFullscreen();
-    	//	} else if (document.documentElement.msRequestFullscreen) {
-    	//		document.documentElement.msRequestFullscreen();
-    	//	} else if (document.documentElement.mozRequestFullScreen) {
-    	//		document.documentElement.mozRequestFullScreen();
-    	//	} else if (document.documentElement.webkitRequestFullscreen) {
-    	//		document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-    	//	}
-    	//}
-    	//else {
-    	//	if (document.exitFullscreen) {
-    	//		document.exitFullscreen();
-    	//	} else if (document.msExitFullscreen) {
-    	//		document.msExitFullscreen();
-    	//	} else if (document.mozCancelFullScreen) {
-    	//		document.mozCancelFullScreen();
-    	//	} else if (document.webkitExitFullscreen) {
-    	//		document.webkitExitFullscreen();
-    	//	}
-    	//}
     }
 
     init();

@@ -68,7 +68,7 @@ header {
     font-family: 'gan_clmbold';
     font-size: 4em;
     position: absolute;
-	text-shadow: 4px 1px 2px rgb(159, 92, 231);
+	text-shadow: 2px 1px 2px rgb(20, 220, 55);
 }
 
 #bgimg {
@@ -201,7 +201,7 @@ li.main-menu-item.active:before{
     margin-top: 5px;
 }
 
-#mobile-menu-items li.main-menu-item {
+.main-menu-item.mobile {
     display: list-item;
     padding: 12px 8px;
     background-color: #fff;
@@ -209,7 +209,7 @@ li.main-menu-item.active:before{
     font-size: 1.6em;
 }
 
-#mobile-menu-items li.main-menu-item:hover {
+.main-menu-item.mobile:hover {
     background-color: #a2b2b9;
     text-decoration: none;
 }
