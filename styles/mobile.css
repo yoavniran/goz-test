@@ -98,6 +98,7 @@
 	#site-title {
 		font-size: 1.8em;
 		top: 10px;
+		margin: 0.2em 0;
 	}
 
 	#home-content-container {
@@ -113,12 +114,12 @@
 		height: 110px;
 	}
 
-	#mobile-menu{
-		font-size:1.5em;
+	#mobile-menu {
+		font-size: 1.5em;
 	}
 
-	.main-menu-item.mobile{
-		font-size:1.1em;
+	.main-menu-item.mobile {
+		font-size: 1.1em;
 	}
 }
 
@@ -201,5 +202,11 @@
 @media (min-height: 600px) and (max-width: 400px) {
 	.page-content {
 		max-height: 360px;
+	}
+}
+
+@media (max-height:360px) and (max-width: 700px) {
+	#page-container {
+		padding: 2% 15%;
 	}
 }
