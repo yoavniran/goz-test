@@ -118,9 +118,14 @@
 		font-size: 1.5em;
 	}
 
+	#mobile-menu:before {
+		margin-top: 3px;
+	}
+
 	.main-menu-item.mobile {
 		font-size: 1.1em;
 	}
+
 }
 
 @media (max-height:360px) {
@@ -138,7 +143,11 @@
 	}
 
 	.page-content {
-		max-height: 120px;
+		max-height: 110px;
+	}
+
+	#mobile-menu {
+		font-size: 1.3em;
 	}
 }
 
