@@ -137,18 +137,19 @@
     }
 
     function enableFullScreen() {
-    	if (!document.fullscreenElement &&    // alternative standard method
-			!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
-    		if (document.documentElement.requestFullscreen) {
-    			document.documentElement.requestFullscreen();
-    		} else if (document.documentElement.msRequestFullscreen) {
-    			document.documentElement.msRequestFullscreen();
-    		} else if (document.documentElement.mozRequestFullScreen) {
-    			document.documentElement.mozRequestFullScreen();
-    		} else if (document.documentElement.webkitRequestFullscreen) {
-    			document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-    		}
-    	}
+    	window.scrollTo(0, 1);
+    	//if (!document.fullscreenElement &&    // alternative standard method
+		//	!document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
+    	//	if (document.documentElement.requestFullscreen) {
+    	//		document.documentElement.requestFullscreen();
+    	//	} else if (document.documentElement.msRequestFullscreen) {
+    	//		document.documentElement.msRequestFullscreen();
+    	//	} else if (document.documentElement.mozRequestFullScreen) {
+    	//		document.documentElement.mozRequestFullScreen();
+    	//	} else if (document.documentElement.webkitRequestFullscreen) {
+    	//		document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    	//	}
+    	//}
     	//else {
     	//	if (document.exitFullscreen) {
     	//		document.exitFullscreen();
