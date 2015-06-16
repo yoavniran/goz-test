@@ -1,43 +1,52 @@
 ﻿$("document").ready(function () {
 
-	var siteContent = {
-		about: {
-			title: "אודותנו",
-			textElement: "#about-content"
-		},
-		mandu: {
-			title: "מונטסורי ויונג",
-			textElement: "#mandu-content"
-		},
-		aboutus: {
-			title: "קצת עלינו",
-			textElement: "#us-content"
-		},
-		meals: {
-			title: "מה אוכלים",
-			textElement: "#meals-content"
-		},
-		vacations: {
-			title: "לוח חופשות",
-			textElement: "#vacations-content"
-		},
-		day: {
-			title: "סדר יום",
-			textElement: "#day-content"
-		}
-	},
-
-        ui = {
+	var ui = {
         	selectedContent : null
         },        
-        mobileMenuItemsCopied = false;
+        mobileMenuItemsCopied = false,
+		siteContent;
 
 	function init() {
+		initSiteContent();
 		doIntroAnimation();
 		initUi();
 		copyMobileMenuItems();
 		registerEvents();
 		//$("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
+	}
+
+	function initSiteContent() {
+
+		siteContent = {
+			about: {
+				title: "אודותנו",
+				textElement: "#about-content"
+			},
+			mandu: {
+				title: "מונטסורי ויונג",
+				textElement: "#mandu-content"
+			},
+			aboutus: {
+				title: "קצת עלינו",
+				textElement: "#us-content"
+			},
+			meals: {
+				title: "מה אוכלים",
+				textElement: "#meals-content"
+			},
+			vacations: {
+				title: "לוח חופשות",
+				textElement: "#vacations-content"
+			},
+			day: {
+				title: "סדר יום",
+				textElement: "#day-content"
+			},
+			contact: {
+				title: "צור קשר",
+				textElement: "#contact-content"
+			}
+		};
 	}
 
 	function copyMobileMenuItems() {
@@ -167,6 +176,12 @@
 	function onMobileMenuClick(e) {
 		ui.mobileMenuContainer.toggleClass("mobile-menu-open");
 
+		if (ui.selectedContent) {
+			if (ui.mobileMenuContainer.hasClass("mobile-menu-open")) {
+				$(".main-menu-item.mobile.active")[0].scrollIntoView();
+			}
+		}
+		
 		e.stopPropagation();
 	}
 

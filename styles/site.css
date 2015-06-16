@@ -159,6 +159,7 @@ li.main-menu-item {
 		height: 16px;
 		display: inline-block;
 		position: relative;
+		top:3px;
 	}
 
 	li.main-menu-item.active:before {
@@ -204,9 +205,9 @@ li.main-menu-item {
 	font-family: 'anka_clmbold';
 	cursor: pointer;
 	background-color: rgb(242, 245, 246);
-	padding: 8px 26px 8px 4px;
+	padding: 8px 26px 6px 4px;
 	border-radius: 0 0 8px 8px;
-	width: 170px;
+	width: 186px;
 	-webkit-box-shadow: 2px 2px 4px 4px #262626;
 	box-shadow: 2px 2px 4px 4px #262626;
 }
@@ -239,8 +240,10 @@ li.main-menu-item {
 	display: none;
 	margin: 0;
 	box-shadow: 2px 2px 4px 2px #262626;
-	width: 200px;
+	width: 216px;
 	padding: 0;
+	max-height:20em;
+	overflow-y:scroll;
 }
 
 #mobile-menu-container.mobile-menu-open #mobile-menu-items {
@@ -253,7 +256,7 @@ li.main-menu-item {
 
 #mobile-menu-container.mobile-menu-open #mobile-menu {
 	height: 0.2em;
-	background-color: #394449;
+	background-color: #453144;
 }
 
 	#mobile-menu-container.mobile-menu-open #mobile-menu:before {
@@ -293,6 +296,8 @@ li.main-menu-item {
 
 	.page-content.content-visible {
 		height: calc(100% - 3em);
+		  border-bottom: #888 1px;
+			border-bottom-style: dotted;
 	}
 
 	.page-content h3 {
