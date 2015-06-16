@@ -206,7 +206,7 @@ li.main-menu-item.active:before{
     display: block;
     position: absolute;
     right: 0px;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 .main-menu-item.mobile {
