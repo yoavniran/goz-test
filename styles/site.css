@@ -5,6 +5,18 @@ body {
 	font-family: "sans-serif";
 }
 
+.italic{
+	font-style:italic;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.centered{
+	text-align:center;
+}
+
 .content-delayed, .intro-delayed {
 	opacity: 0;
 	transition: opacity 3s;

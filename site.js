@@ -12,6 +12,18 @@
 		aboutus: {
 			title: "קצת עלינו",
 			textElement: "#us-content"
+		},
+		meals: {
+			title: "מה אוכלים",
+			textElement: "#meals-content"
+		},
+		vacations: {
+			title: "לוח חופשות",
+			textElement: "#vacations-content"
+		},
+		day: {
+			title: "סדר יום",
+			textElement: "#day-content"
 		}
 	},
 
@@ -25,7 +37,6 @@
 		initUi();
 		copyMobileMenuItems();
 		registerEvents();
-
 		//$("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
 	}
 
