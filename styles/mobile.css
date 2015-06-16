@@ -47,6 +47,10 @@
 	#menu-container {
 		display: none;
 	}
+
+	#site-title-container h2 {
+		margin-right: 30px;
+	}
 }
 
 @media (min-height:830px) {
@@ -94,7 +98,7 @@
 		padding-right: 15%;
 	}
 
-	#site-title {
+	#site-title-container {
 		font-size: 3.4em;
 	}
 }
@@ -127,14 +131,18 @@
 		.page-content p {
 			font-size: 1em;
 		}
-	#site-title {
-		font-size: 1.8em;
+
+	#site-title-container {
 		top: 10px;
-		margin: 0.2em 0;
+		font-size: 1.8em;
+	}
+
+	#site-title {			
+		margin: 0.2em 0 0;
 	}
 
 	#home-content-container {
-		padding: 10px 0;
+		padding: 14px 0;
 	}
 
 	header {
@@ -156,6 +164,7 @@
 
 	.main-menu-item.mobile {
 		font-size: 1.1em;
+		padding:8px 8px;
 	}
 	
 	.li.main-menu-item:before{
@@ -172,9 +181,9 @@
 		right: 20%;
 	}
 
-	#site-title {
-		font-size: 1.6em;
+	#site-title-container{
 		top: 4px;
+		font-size: 1.6em;	
 	}
 
 	.page-content {
@@ -187,7 +196,7 @@
 }
 
 @media (max-width:600px) {
-	#site-title {
+	#site-title-container {
 		font-size: 2.8em;
 	}
 
@@ -197,11 +206,11 @@
 
 	#page-content-container {
 		max-width: 80%;
-	}
+	}	
 }
 
 @media (max-width:500px) {
-	#site-title {
+	#site-title-container {
 		font-size: 2.2em;
 	}
 
@@ -215,7 +224,7 @@
 		font-size: 1.5em;
 	}
 
-	#site-title {
+	#site-title-container {
 		font-size: 2em;
 	}
 
