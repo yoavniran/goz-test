@@ -234,6 +234,19 @@ li.main-menu-item.active:before{
     display: block;    
 } 
 
+#mobile-menu-container.mobile-menu-open #mobile-menu span{
+	display:none;
+}
+
+#mobile-menu-container.mobile-menu-open #mobile-menu{
+	height:0.2em;
+	background-color:#394449;
+}
+
+#mobile-menu-container.mobile-menu-open #mobile-menu:before{
+	display:none;
+}
+
 #page-container {
     position: fixed;
     z-index: 2;
