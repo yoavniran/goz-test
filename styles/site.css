@@ -22,7 +22,6 @@ body {
 #screen-res{
 	position:absolute;
 	font-size:12px;
-
 }
 
 #site-container {
@@ -75,7 +74,7 @@ header {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-image: url("../images/bg2.JPG");
+    background-image: url("../images/gozali-web-bg.jpg");
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -90,7 +89,7 @@ header {
     right: 80px;
     position: absolute;
     display: block;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     color: white;
     width: 100%;
@@ -114,7 +113,7 @@ header {
 li.main-menu-item {
     list-style: none;
     display: inline;
-    margin-right: 20px;
+    margin-right: 10px;
     font-family: 'anka_clmbold';
     text-shadow: 1px 1px 4px #525252;
 }
@@ -133,13 +132,11 @@ li.main-menu-item:before{
     background:  url("../images/menu-item.png") no-repeat;
     width:16px;height:16px;
     display: inline-block;
+	position:relative;
 }
 
 li.main-menu-item.active:before{
-    content: '';
     background:  url("../images/menu-active.png") no-repeat;
-    width:16px;height:16px;
-    display: inline-block;
 }
 
 .main-quote {
@@ -248,14 +245,28 @@ li.main-menu-item.active:before{
 
 .page-content {
     position: relative;
-    overflow-y: scroll;
-    font-size: 1.4em;
+    overflow-y: scroll;   
     max-height: 300px;
 	font-family:Arial;
+	height:0;
+}
+
+.page-content.content-visible{
+	height:initial;
+}
+
+.page-content  h3{
+	font-size:1.6em;
+	padding-right:6px;
 }
 
 .page-content p {
     padding: 0 12px;
+	 font-size: 1.4em;
+}
+
+.content-person-name{
+	font-weight:bold;
 }
 
 .filler {
@@ -266,4 +277,11 @@ li.main-menu-item.active:before{
     left: 0;
     right: 0;
     opacity: 0.6;
+}
+
+.content-quote {
+	font-weight:bold;
+	font-style:italic;
+	display:block;
+	margin: 2px 0;
 }

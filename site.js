@@ -1,172 +1,168 @@
-﻿//(function (win) {
-//	var doc = win.document;
+﻿$("document").ready(function () {
 
-//	// If there's a hash, or addEventListener is undefined, stop here
-//	if (!win.navigator.standalone && !location.hash && win.addEventListener) {
+	var siteContent = {
+		about: {
+			title: "אודותנו",
+			textElement: "#about-content"
+		},
+		mandu: {
+			title: "מונטסורי ויונג",
+			textElement: "#mandu-content"
+		},
+		aboutus: {
+			title: "קצת עלינו",
+			textElement: "#us-content"
+		}
+	},
 
-//		//scroll to 1
-//		win.scrollTo(0, 1);
-//		var scrollTop = 1,
-//			getScrollTop = function () {
-//				return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
-//			},
-
-//			//reset to 0 on bodyready, if needed
-//			bodycheck = setInterval(function () {
-//				if (doc.body) {
-//					clearInterval(bodycheck);
-//					scrollTop = getScrollTop();
-//					win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-//				}
-//			}, 15);
-
-//		win.addEventListener("load", function () {
-//			setTimeout(function () {
-//				//at load, if user hasn't scrolled more than 20 or so...
-//				if (getScrollTop() < 20) {
-//					//reset to hide addr bar at onload
-//					win.scrollTo(0, scrollTop === 1 ? 0 : 1);
-//				}
-//			}, 0);
-//		}, false);
-//	}
-//})(this);
-
-$("document").ready(function () {
-
-    var siteContent = {
-            about: {
-                title: "אודותנו",
-                textElement: "#about-content"
-            }
-        },
-
-        ui = {},
-        selectedContent = null,
+        ui = {
+        	selectedContent : null
+        },        
         mobileMenuItemsCopied = false;
 
-    function init() {
-        doIntroAnimation();
-        initUi();
-        copyMobileMenuItems();
-        registerEvents();
+	function init() {
+		doIntroAnimation();
+		initUi();
+		copyMobileMenuItems();
+		registerEvents();
 
-        $("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
-    }
+		$("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
+	}
 
-    function copyMobileMenuItems() {
+	function copyMobileMenuItems() {
 
-        if (!mobileMenuItemsCopied) {
-            var items = ui.menuItems.clone();
+		if (!mobileMenuItemsCopied) {
+			var items = ui.menuItems.clone();
 
-            items.addClass("mobile");
-            items.appendTo(ui.mobileMenuItems);
+			items.addClass("mobile");
+			items.appendTo(ui.mobileMenuItems);
 
-            ui.menuItems = ui.menuItems.add(items);
+			ui.menuItems = ui.menuItems.add(items);
 
-            mobileMenuItemsCopied = true;
-        }
-    }
+			mobileMenuItemsCopied = true;
+		}
+	}
 
-    function initUi() {
-        ui.menuItems = $(".main-menu-item");
-        ui.mobileMenuItems = $("#mobile-menu-items");
-        ui.mobileMenuContainer = $("#mobile-menu-container");
-        ui.contentTitle = $("#page-content-container h2");
-        ui.homeContent = $("#home-content-container");
-        ui.mobileMenu = $("#mobile-menu");
-    }
+	function initUi() {
+		ui.menuItems = $(".main-menu-item");
+		ui.mobileMenuItems = $("#mobile-menu-items");
+		ui.mobileMenuContainer = $("#mobile-menu-container");
+		ui.contentTitle = $("#page-content-container h2");
+		ui.homeContent = $("#home-content-container");
+		ui.mobileMenu = $("#mobile-menu");
+	}
 
-    function registerEvents() {
+	function registerEvents() {
 
-        ui.menuItems.click(onMenuItemClick);
-        ui.mobileMenu.click(onMobileMenuClick);
+		ui.menuItems.click(onMenuItemClick);
+		ui.mobileMenu.click(onMobileMenuClick);
 
-        $("#site-logo").click(onLogoClick);
-        $("body").click(onBodyClick);
-    }
+		$("#site-logo").click(onLogoClick);
+		$("body").click(onBodyClick);
+	}
 
-    function doIntroAnimation() {
-        setTimeout(function () {
+	function doIntroAnimation() {
+		setTimeout(function () {
 
-        	var bgImgFilter = "blur(6px) contrast(60%) drop-shadow(6px 10px 4px rgb(20, 220, 55)) ";
-            $("#bgimg").css({"-webkit-filter": bgImgFilter, "filter": bgImgFilter});
+			var bgImgFilter = "blur(6px) contrast(60%) drop-shadow(6px 10px 4px rgb(20, 220, 55)) ";
+			$("#bgimg").css({ "-webkit-filter": bgImgFilter, "filter": bgImgFilter });
 
-            toggleDelayedElement(".intro-delayed", true);
+			toggleDelayedElement(".intro-delayed", true);
 
-        }, 200);
-    }  
+		}, 200);
+	}
 
-    function toggleDelayedElement(selector, show, quickHide){
-        selector = (selector instanceof jQuery) ? selector : $(selector);
+	function toggleDelayedElement(selector, show, quickHide) {
+		selector = (selector instanceof jQuery) ? selector : $(selector);
 
-        if (quickHide) {
-        	selector.hide();
-        	setTimeout(function () {
-        		selector.show();
-        	}, 1);
-        }
-		
+		if (quickHide) {
+			selector.hide();
+			setTimeout(function () {
+				selector.show();
+			}, 1);
+		}
+
 		selector.toggleClass("delayed-visible", show);
-    }
+	}
 
-    function onBodyClick(e) {
-        var target = e.target || e.srcElement;
+	function onBodyClick(e) {
+		var target = e.target || e.srcElement;
 
-        if (target !== ui.mobileMenu[0]) {
-        	ui.mobileMenuContainer.toggleClass("mobile-menu-open", false);
-        	e.stopPropagation();
-        }
-    }
+		if (target !== ui.mobileMenu[0]) {
+			ui.mobileMenuContainer.toggleClass("mobile-menu-open", false);
+			e.stopPropagation();
+		}
+	}
 
-    function onMenuItemClick() {
-      
-        var contentId = this.dataset.menuItem;
+	function onMenuItemClick() {
 
-        setActiveMenuItem(contentId);
-        showPageContent(contentId);
-    }
+		var contentId = this.dataset.menuItem;
+		
+		showPageContent(contentId);
+		setActiveMenuItem(contentId);
+	}
 
-    function setActiveMenuItem(contentId) {
+	function setActiveMenuItem(contentId) {
 
-        ui.menuItems.each(function (idx, item) {
+		ui.menuItems.each(function (idx, item) {
 
-            if (item.dataset.menuItem === contentId) {
-                item.classList.add("active");
-            }
-            else {
-                item.classList.remove("active");
-            }
-        });
-    }
+			if (item.dataset.menuItem === contentId) {
+				item.classList.add("active");
+			}
+			else {
+				item.classList.remove("active");
+			}
+		});
+	}	
 
-    function showPageContent(contentId) {
-        var contentItem = siteContent[contentId];
+	function showPageContent(contentId) {
 
-        if (contentItem) {
-            toggleDelayedElement(ui.homeContent, false);
-            toggleDelayedElement("#page-container", true);
+		var contentItem = siteContent[contentId],
+			alreadyShowingContent = !!ui.selectedContent;
 
-            ui.contentTitle.text(contentItem.title);
-            selectedContent = $(contentItem.textElement);
-            toggleDelayedElement(selectedContent, true);
-        }
-        else {
-            console.error("couldnt find content item: " + contentId);
-        }
-    }
+		if (contentItem) {	
 
-    function onMobileMenuClick(e) {
-    	ui.mobileMenuContainer.toggleClass("mobile-menu-open");
+			hideSelectedContent(alreadyShowingContent);
 
-    	e.stopPropagation();
-    }
+			if (!alreadyShowingContent) {
+				toggleDelayedElement(ui.homeContent, false);
+				toggleDelayedElement("#page-container", true);
+			}
 
-    function onLogoClick() {
-        toggleDelayedElement(ui.homeContent, true);
-        toggleDelayedElement("#page-container", false, true);
-        setActiveMenuItem(null);
-    }
+			ui.contentTitle.text(contentItem.title);
+			ui.selectedContent = $(contentItem.textElement);
+			ui.selectedContent.toggleClass("content-visible", true);
+			toggleDelayedElement(ui.selectedContent, true);
+		}
+		else {
+			console.error("couldnt find content item: " + contentId);
+		}
+	}
 
-    init();
+	function hideSelectedContent(dontHideContainer) {
+
+		if (ui.selectedContent) {
+
+			if (!dontHideContainer) {
+				toggleDelayedElement("#page-container", false, true);
+			}
+
+			ui.selectedContent.toggleClass("content-visible", false);
+			setActiveMenuItem(null);
+			ui.selectedContent = null;
+		}
+	}
+
+	function onMobileMenuClick(e) {
+		ui.mobileMenuContainer.toggleClass("mobile-menu-open");
+
+		e.stopPropagation();
+	}
+
+	function onLogoClick() {
+		hideSelectedContent();
+		toggleDelayedElement(ui.homeContent, true);		
+	}
+
+	init();
 });
