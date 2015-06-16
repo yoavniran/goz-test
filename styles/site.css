@@ -61,11 +61,11 @@ header {
 }
 
 #site-title-container{
-    right: 20px;
+    margin-right: 20px;
     top: 30px;
- position: absolute;
+ position: relative;
   font-size: 4em;   
-  font-family: 'gan_clmbold';   
+  font-family: 'shofar';   
       color: #fff;    
 }
 
@@ -77,6 +77,7 @@ header {
 #site-title {
 
 	text-shadow: 2px 1px 2px rgb(20, 220, 55);
+	margin-top:0;
 	margin-bottom:2px;
 	font-size:inherit;
 }
@@ -251,7 +252,8 @@ li.main-menu-item.active:before{
     position: fixed;
     z-index: 2;
     width: 100%;
-    padding: 5% 12%;
+    padding: 0;  /*5% 12%;*/
+	height:100%;
 }
 
 #page-content-container h2 {
@@ -263,20 +265,23 @@ li.main-menu-item.active:before{
 }
 
 #page-content-container {
-    max-width: 70%;
+    width: 90%;
     position: relative;
+	height:50%;
+	margin-top:2%;
+	margin-right:5%;
 }
 
 .page-content {
     position: relative;
     overflow-y: scroll;   
-    max-height: 300px;
+    /*max-height: 300px;*/
 	font-family:Arial;
-	height:0;
+	height: 0; /*calc(100% - 2em);*/
 }
 
 .page-content.content-visible{
-	height:initial;
+	height:calc(100% - 4em);
 }
 
 .page-content  h3{

@@ -1,5 +1,4 @@
-﻿
-@media (min-width: 1000px) {
+﻿@media (min-width: 1000px) {
 	.main-quote:nth-child(2) {
 		margin-top: 80px;
 	}
@@ -18,14 +17,20 @@
 	}
 }
 
-@media (min-width: 700px) {
-	#page-container {
+@media (min-width: 800px) {
+	/*#page-container {
 		  padding: 5% 15%;
+	}*/	
+}
+
+@media (min-width: 700px) {
+	/*#page-container {
+		  padding: 6% 15%;
 	}
 	
 	#page-content-container{
 		width:80%;
-	}
+	}*/
 }
 
 @media (max-width:960px) {
@@ -48,23 +53,30 @@
 		display: none;
 	}
 
+	#site-title-container {
+		font-size: 3.6em;
+	}
+
 	#site-title-container h2 {
 		margin-right: 30px;
 	}
 }
 
 @media (min-height:830px) {
-	.page-content {
+	/*.page-content {
 		max-height: 420px;
+	}*/
+
+	#site-title-container {
+		font-size: 3.5em;
 	}
 }
 
 @media (min-height:1000px) {
-	.page-content {
+	/*.page-content {
 		max-height: 620px;
-	}
+	}*/
 }
-
 
 @media (max-height:800px) {
 
@@ -72,15 +84,15 @@
 		font-size: 2.2em;
 	}
 
-	.page-content {
+	/*.page-content {
 		max-height: 400px;
-	}
+	}*/
 }
 
 @media (max-height:640px) {
-	.page-content {
+	/*.page-content {
 		max-height: 260px;
-	}
+	}*/
 }
 
 @media (max-height:600px) {
@@ -89,14 +101,14 @@
 		font-size: 2em;
 	}
 
-	.page-content {
+	/*.page-content {
 		max-height: 250px;
 	}
 
 	#page-container {
 		padding: 3% 12%;
 		padding-right: 15%;
-	}
+	}*/
 
 	#site-title-container {
 		font-size: 3.4em;
@@ -104,9 +116,9 @@
 }
 
 @media (max-height:500px) {
-	.page-content {
+	/*.page-content {
 		max-height: 160px;
-	}
+	}*/
 
 	.main-quote {
 		font-size: 1.3em;
@@ -124,9 +136,9 @@
 		font-size: 1.2em;
 	}
 
-	.page-content {
+	/*.page-content {
 		max-height: 140px;		
-	}
+	}*/
 
 		.page-content p {
 			font-size: 1em;
@@ -186,9 +198,9 @@
 		font-size: 1.6em;	
 	}
 
-	.page-content {
+	/*.page-content {
 		max-height: 110px;
-	}
+	}*/
 
 	#mobile-menu {
 		font-size: 1.3em;
@@ -200,13 +212,13 @@
 		font-size: 2.8em;
 	}
 
-	#page-container {
+	/*#page-container {
 		padding: 4% 10%;
 	}
 
 	#page-content-container {
 		max-width: 80%;
-	}	
+	}*/	
 }
 
 @media (max-width:500px) {
@@ -233,13 +245,17 @@
 		height: 140px;
 	}
 
-	#page-container {
-		padding: 2% 5%;
+	#page-container p{
+		font-size:1.2em;
 	}
 
-	#page-content-container {
+	/*#page-container {
+		padding: 2% 5%;
+	}*/
+
+	/*#page-content-container {
 		max-width: 90%;
-	}
+	}*/
 
 	#site-logo::after {
 		width: 80px;
@@ -253,13 +269,13 @@
 }
 
 @media (min-height: 600px) and (max-width: 400px) {
-	.page-content {
+	/*.page-content {
 		max-height: 360px;
-	}
+	}*/
 }
 
 @media (max-height:360px) and (max-width: 700px) {
-	#page-container {
+	/*#page-container {
 		padding: 2% 15%;
-	}
+	}*/
 }

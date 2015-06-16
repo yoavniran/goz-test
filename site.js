@@ -26,7 +26,7 @@
 		copyMobileMenuItems();
 		registerEvents();
 
-		$("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
+		//$("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
 	}
 
 	function copyMobileMenuItems() {
