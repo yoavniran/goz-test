@@ -4,7 +4,7 @@
         	selectedContent : null
         },        
         mobileMenuItemsCopied = false,
-		siteContent;
+		selectedContentId, siteContent;
 
 	function init() {
 		initSiteContent();
@@ -64,18 +64,21 @@
 	}
 
 	function initUi() {
+		ui.pageContentContainer = $("#page-content-container");
 		ui.menuItems = $(".main-menu-item");
 		ui.mobileMenuItems = $("#mobile-menu-items");
 		ui.mobileMenuContainer = $("#mobile-menu-container");
 		ui.contentTitle = $("#page-content-container h2");
 		ui.homeContent = $("#home-content-container");
 		ui.mobileMenu = $("#mobile-menu");
+		ui.contactButton = $(".phone-container");
 	}
 
 	function registerEvents() {
 
 		ui.menuItems.click(onMenuItemClick);
 		ui.mobileMenu.click(onMobileMenuClick);
+		ui.contactButton.click(onContactClick);
 
 		$("#site-logo").click(onLogoClick);
 		$("body").click(onBodyClick);
@@ -114,6 +117,10 @@
 		}
 	}
 
+	function onContactClick(){
+		onMenuItemClick.call(this);
+	}
+
 	function onMenuItemClick() {
 
 		var contentId = this.dataset.menuItem;
@@ -124,15 +131,23 @@
 
 	function setActiveMenuItem(contentId) {
 
+		if (selectedContentId) {
+			ui.pageContentContainer.removeClass("content-" + selectedContentId); //remove previous
+		}
+
 		ui.menuItems.each(function (idx, item) {
 
 			if (item.dataset.menuItem === contentId) {
+
+				ui.pageContentContainer.addClass("content-" + contentId);
 				item.classList.add("active");
 			}
 			else {
 				item.classList.remove("active");
 			}
 		});
+
+		selectedContentId = contentId;
 	}	
 
 	function showPageContent(contentId) {
@@ -140,7 +155,7 @@
 		var contentItem = siteContent[contentId],
 			alreadyShowingContent = !!ui.selectedContent;
 
-		if (contentItem) {	
+		if (contentItem) {
 
 			hideSelectedContent(alreadyShowingContent);
 
@@ -152,6 +167,7 @@
 			ui.contentTitle.text(contentItem.title);
 			ui.selectedContent = $(contentItem.textElement);
 			ui.selectedContent.toggleClass("content-visible", true);
+
 			toggleDelayedElement(ui.selectedContent, true);
 		}
 		else {
@@ -168,6 +184,8 @@
 			}
 
 			ui.selectedContent.toggleClass("content-visible", false);
+			ui.pageContentContainer.removeClass("content-" + selectedContentId);
+
 			setActiveMenuItem(null);
 			ui.selectedContent = null;
 		}

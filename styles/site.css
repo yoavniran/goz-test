@@ -287,10 +287,26 @@ li.main-menu-item {
 	margin-right: 5%;
 }
 
-.phone-container{
-	background:url("../images/phone.png") no-repeat;
-	height:32px; width:32px;
+#page-content-container.content-contact #phone-content-container{
+	display: none;
+}
 
+#phone-content-container{
+
+	position:absolute;
+	left: 0px;
+	top: -40px;
+	padding: 2px;
+}
+
+.phone-container:after{
+	content: '';
+	background:url("../images/phone.png") no-repeat center;
+	background-size: cover;
+	height:32px; width:32px;
+	display: block;
+	position: relative;
+	cursor: pointer;
 }
 
 .page-content {

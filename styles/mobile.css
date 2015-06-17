@@ -181,6 +181,13 @@
 	.main-quote {
 		font-size: 1.6em;
 	}
+
+	#phone-content-container{
+		top:-30px;
+	}
+	.phone-container:after{
+		height:24px; width:24px;
+	}
 }
 
 @media (max-width:400px) {
