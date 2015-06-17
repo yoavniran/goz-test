@@ -19,7 +19,7 @@
 
 		siteContent = {
 			about: {
-				title: "אודותנו",
+				title: "על גוזלי",
 				textElement: "#about-content"
 			},
 			mandu: {
