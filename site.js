@@ -39,7 +39,7 @@
 				textElement: "#vacations-content"
 			},
 			day: {
-				title: "סדר יום",
+				title: "פעילות הפעוטון",
 				textElement: "#day-content"
 			},
 			contact: {
