@@ -168,6 +168,8 @@
 			ui.selectedContent = $(contentItem.textElement);
 			ui.selectedContent.toggleClass("content-visible", true);
 
+			ga("send", "pageview",{page: "/"+contentId, title: contentItem.title});
+
 			toggleDelayedElement(ui.selectedContent, true);
 		}
 		else {
