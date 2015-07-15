@@ -132,14 +132,14 @@
 	function setActiveMenuItem(contentId) {
 
 		if (selectedContentId) {
-			ui.pageContentContainer.removeClass("content-" + selectedContentId); //remove previous
+			ui.pageContentContainer.removeClass("active-content-" + selectedContentId); //remove previous
 		}
 
 		ui.menuItems.each(function (idx, item) {
 
 			if (item.dataset.menuItem === contentId) {
 
-				ui.pageContentContainer.addClass("content-" + contentId);
+				ui.pageContentContainer.addClass("active-content-" + contentId);
 				item.classList.add("active");
 			}
 			else {
@@ -168,6 +168,8 @@
 			ui.selectedContent = $(contentItem.textElement);
 			ui.selectedContent.toggleClass("content-visible", true);
 
+			ga("send", "pageview",{page: "/"+contentId, title: contentItem.title});
+
 			toggleDelayedElement(ui.selectedContent, true);
 		}
 		else {
@@ -184,7 +186,7 @@
 			}
 
 			ui.selectedContent.toggleClass("content-visible", false);
-			ui.pageContentContainer.removeClass("content-" + selectedContentId);
+			ui.pageContentContainer.removeClass("active-content-" + selectedContentId);
 
 			setActiveMenuItem(null);
 			ui.selectedContent = null;

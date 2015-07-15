@@ -77,7 +77,7 @@ header {
 	top: 30px;
 	position: relative;
 	font-size: 4em;
-	font-family: 'anka_clmbold'; /*font-family: 'shofar';*/
+	font-family: 'anka_clmbold';
 	color: #fff;
 }
 
@@ -274,10 +274,24 @@ li.main-menu-item {
 #page-content-container h2 {
 	margin: 0;
 	position: relative;
-	padding: 2px 10px;
-	font-size: 2em;
+	padding: 3px 10px;
+	font-size: 1.8em;
 	text-shadow: 1px 1px 1px #0C1112;
 }
+
+#page-content-container.active-content-contact h2{
+	padding-right:30px;
+}
+#page-content-container.active-content-contact h2:before{
+	content: '';
+	background:url("../images/phone.png") no-repeat center;
+	background-size: cover;
+	height:24px; width:24px;
+	position:absolute;
+	top:7px;
+	right:4px;
+}
+
 
 #page-content-container {
 	width: 90%;
@@ -287,7 +301,7 @@ li.main-menu-item {
 	margin-right: 5%;
 }
 
-#page-content-container.content-contact #phone-content-container{
+#page-content-container.active-content-contact #phone-content-container{
 	display: none;
 }
 
