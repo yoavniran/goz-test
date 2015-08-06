@@ -193,7 +193,7 @@ li.main-menu-item {
 }
 
 #mobile-menu-container {
-	bottom: 12px;
+	bottom: 24px;
 	left: 20px;
 	position: absolute;
 	display: none;
@@ -282,6 +282,7 @@ li.main-menu-item {
 #page-content-container.active-content-contact h2{
 	padding-right:30px;
 }
+
 #page-content-container.active-content-contact h2:before{
 	content: '';
 	background:url("../images/phone.png") no-repeat center;
@@ -330,22 +331,22 @@ li.main-menu-item {
 	height: 0;
 }
 
-	.page-content.content-visible {
-		height: calc(100% - 3em);
-		  border-bottom: #888 1px;
-			border-bottom-style: dotted;
-	}
+.page-content.content-visible {
+	height: calc(100% - 3em);
+	  border-bottom: #888 1px;
+		border-bottom-style: dotted;
+}
 
-	.page-content h3 {
-		font-size: 1.6em;
-		padding-right: 6px;
-	}
+.page-content h3 {
+	font-size: 1.6em;
+	padding-right: 6px;
+}
 
-	.page-content p {
-		padding: 0 12px;
-		margin-top:2px;
-		font-size: 1.4em;
-	}
+.page-content p {
+	padding: 0 12px;
+	margin-top:2px;
+	font-size: 1.4em;
+}
 
 .content-person-name {
 	font-weight: bold;
@@ -366,4 +367,74 @@ li.main-menu-item {
 	font-style: italic;
 	display: block;
 	margin: 2px 0;
+}
+
+.bottom-site-address{
+	color:#fff;
+	font-weight: bold;
+	font-size:1.2em;
+	position: fixed;
+	bottom: 2px;
+	left:6	px;
+}
+
+.content-image{
+	position: relative;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width:80%;
+	height:220px;
+    margin-right: 5%;
+}
+
+#contact-map-img{
+	background-image: url("../images/contact-map.png");
+	cursor: pointer;;
+}
+
+#overlay{
+	top:0;
+	z-index: 100;
+	left:-110px;
+	opacity: 0;
+	position: fixed;
+	height: 100%;
+	width:100px;	
+
+	transition: opacity 2s,  left 1.5s;	
+}
+
+#overlay .filler {
+	opacity: 0.84;
+}
+
+#overlay iframe{
+	border:0;
+	position: relative;	
+	height:100%;
+	width:100%;
+}
+
+#overlay-close{
+	position: absolute;
+	top:10px;
+	right:10px;
+	width: 48px;
+	height:48px;
+	background-position: center center;
+	background-size: cover;
+	background: url("../images/close.png") no-repeat;
+	cursor: pointer;
+}
+
+#overlay-content{
+	position: absolute;
+	height:80%;
+	top:10%;
+	left:10%;
+	width:80%;
+	-webkit-box-shadow: -6px -1px 30px 7px rgba(89,84,89,0.61);
+	-moz-box-shadow: -6px -1px 30px 7px rgba(89,84,89,0.61);
+	box-shadow: -6px -1px 30px 7px rgba(89,84,89,0.61);
 }
