@@ -424,7 +424,8 @@ li.main-menu-item {
 	height:48px;
 	background-position: center center;
 	background-size: cover;
-	background: url("../images/close.png") no-repeat;
+	background-image: url("../images/close.png");
+	background-repeat:  no-repeat;
 	cursor: pointer;
 }
 
@@ -437,4 +438,9 @@ li.main-menu-item {
 	-webkit-box-shadow: -6px -1px 30px 7px rgba(89,84,89,0.61);
 	-moz-box-shadow: -6px -1px 30px 7px rgba(89,84,89,0.61);
 	box-shadow: -6px -1px 30px 7px rgba(89,84,89,0.61);
+}
+
+.map-loading{
+	transition: font-size 5s;
+	font-size:1em;
 }

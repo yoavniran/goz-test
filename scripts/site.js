@@ -148,7 +148,7 @@
 			.html(content);
 		}	
 
-				ui.overlay.container.css({"opacity": "1", "left": "0", "width": "100%"});
+		ui.overlay.container.css({"opacity": "1", "left": "0", "width": "100%"});
 	}
 
 	function hideOverlay(){
@@ -159,13 +159,18 @@
 
 	function onContactMapClick(){
 
-
-			showOverlay("contactMap", "<iframe " 
+			showOverlay("contactMap", "<span class=\"map-loading\">טוען...</span><iframe " 
 						  + "width=\"300\" "  
 						  + "height=\"150\" "
 						  + "frameborder=\"0\" " 
 						  + "src=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyDy2owgl0qFFsLhcSyyFDW_YqsOuhynzWg&q=Neve Amirim, Hertsliya&zoom=15\" allowfullscreen> " 
 						+ "</iframe>");
+
+			var mapLoadingIndicator = ui.overlay.content.find(".map-loading").css("font-size", "2em");
+			
+			$("#overlay iframe").on("load", function(){
+				mapLoadingIndicator.remove();
+			});
 	}
 
 	function onOverlayCloseClick(){

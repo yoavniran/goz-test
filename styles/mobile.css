@@ -188,6 +188,11 @@
 	.phone-container:after{
 		height:24px; width:24px;
 	}
+
+	#overlay-close{
+		width: 40px;
+		height:40px;
+	}
 }
 
 @media (max-width:400px) {
@@ -225,6 +230,11 @@
 	}
 	.main-quote:nth-child(2){
 		margin-top:14px;
+	}
+
+	#overlay-close{
+		width: 36px;
+		height:36px;
 	}
 }
 
