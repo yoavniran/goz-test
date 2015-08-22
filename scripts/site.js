@@ -1,5 +1,5 @@
 ﻿$("document").ready(function () {
-
+"use strict";
 	var ui = {
         	selectedContent : null
         },        
@@ -71,6 +71,7 @@
 			close: $("#overlay #overlay-close")
 		};
 
+		ui.body = $("body");
 		ui.pageContentContainer = $("#page-content-container");
 		ui.menuItems = $(".main-menu-item");
 		ui.mobileMenuItems = $("#mobile-menu-items");
@@ -123,7 +124,7 @@
 		var target = e.target || e.srcElement;
 
 		if (target !== ui.mobileMenu[0]) {
-			ui.mobileMenuContainer.toggleClass("mobile-menu-open", false);
+			ui.body.toggleClass("mobile-menu-open", false);
 			e.stopPropagation();
 		}
 	}
@@ -158,6 +159,8 @@
 	}
 
 	function onContactMapClick(){
+
+			ga("send", "event", "action", "contant-map-open", "maps");
 
 			showOverlay("contactMap", "<span class=\"map-loading\">טוען...</span><iframe " 
 						  + "width=\"300\" "  
@@ -242,10 +245,10 @@
 	}
 
 	function onMobileMenuClick(e) {
-		ui.mobileMenuContainer.toggleClass("mobile-menu-open");
+		ui.body.toggleClass("mobile-menu-open");
 
 		if (ui.selectedContent) {
-			if (ui.mobileMenuContainer.hasClass("mobile-menu-open")) {
+			if (ui.body.hasClass("mobile-menu-open")) {
 				$(".main-menu-item.mobile.active")[0].scrollIntoView();
 			}
 		}

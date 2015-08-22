@@ -157,6 +157,7 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
-*.sln
+*.s]
+ln
 
 aspnet_client/

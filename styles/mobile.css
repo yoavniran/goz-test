@@ -61,6 +61,10 @@
 
 @media (max-height:800px) {
 
+	#page-content-container{
+		height:50%;
+	}
+	
 	.main-quote {
 		font-size: 2.2em;
 	}
