@@ -470,7 +470,7 @@ li.main-menu-item {
 	margin: 12px auto 5px auto;
 	max-height: 200px;
 	max-width: 200px;
-	cursor: pointer; 
+	/*cursor: pointer; */
 	-webkit-box-shadow: -1px -1px 15px 9px rgba(89,84,89,0.61);
 	-moz-box-shadow: -1px -1px 15px 9px rgba(89,84,89,0.61);
 	box-shadow: -1px -1px 15px 9px rgba(89,84,89,0.61);
