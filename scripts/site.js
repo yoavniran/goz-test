@@ -1,5 +1,6 @@
 ﻿$("document").ready(function () {
 "use strict";
+
 	var ui = {
         	selectedContent : null
         },        
@@ -40,7 +41,7 @@
 				textElement: "#vacations-content"
 			},
 			day: {
-				title: "פעילות הפעוטון",
+				title: "פעילות המשפחתון",
 				textElement: "#day-content"
 			},
 			contact: {
