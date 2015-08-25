@@ -329,6 +329,40 @@ li.main-menu-item {
 	margin-right: 5%;
 }
 
+#content-read-status{
+	content:"";
+	height:8px;
+	left:0px;
+	position: absolute;
+	bottom: 0px;
+	width:10px;	
+
+	transition: width 1.2s;
+}
+
+#content-read-status.read-status-level-1{
+	background-color: rgba(255, 73, 0, 0.8);
+}
+
+#content-read-status.read-status-level-2{
+	background-color: rgba(245, 104, 10, 0.56);
+}
+
+#content-read-status.read-status-level-3{
+	background-color: rgba(222, 207, 38, 0.7);
+}
+
+#content-read-status.read-status-level-4{
+	background-color: rgba(172, 222, 117, 0.88);
+}
+
+#content-read-status.read-status-level-5{
+	background-color: rgba(80, 253, 130, 0.75);
+}
+
+#content-read-status.read-status-level-6{
+	background-color: rgba(0, 255, 7, 0.8);
+}
 #page-content-container.active-content-contact #phone-content-container{
 	display: none;
 }
@@ -494,3 +528,4 @@ li.main-menu-item {
 	float:right;
 	margin-left:10px;	
 }
+

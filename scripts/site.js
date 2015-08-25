@@ -82,6 +82,7 @@
 		ui.mobileMenu = $("#mobile-menu");
 		ui.contactButton = $(".phone-container");
 		ui.contactMap = $("#contact-map-img");
+		ui.readStatus = $("#content-read-status");
 	}
 
 	function registerEvents() {
@@ -223,11 +224,34 @@
 			ga("send", "pageview",{page: "/"+contentId, title: contentItem.title});
 
 			toggleDelayedElement(ui.selectedContent, true);
+			initReadStatusForCotnent(ui.selectedContent, contentId);
 		}
 		else {
 			console.error("couldnt find content item: " + contentId);
 		}
 	}
+
+	function initReadStatusForCotnent(selectedContent, id){
+
+		calcReadStatusForCotnent(selectedContent);
+
+		selectedContent.on("scroll", function(){
+			calcReadStatusForCotnent(selectedContent);
+		});
+	}
+
+	function calcReadStatusForCotnent(selectedContent){
+		
+		var contentElm = selectedContent[0],
+			currentScrollTop = contentElm.scrollTop,
+	 		readStatus = Math.floor(((currentScrollTop + contentElm.clientHeight +1) / contentElm.scrollHeight * 100)),
+		 	statusWidth = ui.pageContentContainer.width() * (readStatus / 100),
+		 	stateLevel = (Math.floor((readStatus * 5 /100))+1);		
+		
+		ui.readStatus
+			.attr("class", "read-status-level-" + stateLevel)
+			.css("width", statusWidth);
+	}	
 
 	function hideSelectedContent(dontHideContainer) {
 
@@ -236,7 +260,8 @@
 			if (!dontHideContainer) {
 				toggleDelayedElement("#page-container", false, true);
 			}
-
+			
+			ui.selectedContent.off("scroll");
 			ui.selectedContent.toggleClass("content-visible", false);
 			ui.pageContentContainer.removeClass("active-content-" + selectedContentId);
 
