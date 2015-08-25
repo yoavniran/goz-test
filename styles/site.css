@@ -341,27 +341,27 @@ li.main-menu-item {
 }
 
 	#content-read-status.read-status-level-1{
-		background-color: rgba(245, 222, 54, 0.7);
+		background-color: rgba(197, 184, 202, 0.85);
 	}
 
 	#content-read-status.read-status-level-2{
-		background-color: rgba(202, 226, 51, 0.4);
+		background-color: rgba(183, 146, 197, 0.75);
 	}
 
 	#content-read-status.read-status-level-3{
-		background-color: rgba(150, 212, 41, 0.5);
+		background-color: rgba(167, 145, 177, 0.82)
 	}
 
 	#content-read-status.read-status-level-4{
-		background-color: rgba(172, 222, 117, 0.7);
+		background-color:rgba(153, 105, 175, 0.8);
 	}
 
 	#content-read-status.read-status-level-5{
-		background-color: rgba(80, 253, 130, 0.55);
+		background-color: rgba(112, 64, 134, 0.75);
 	}
 
 	#content-read-status.read-status-level-6{
-		background-color: rgba(0, 255, 7, 0.5);
+		background-color: rgba(133, 59, 167, 0.76);
 	}
 
 #page-content-container.active-content-contact #phone-content-container{
