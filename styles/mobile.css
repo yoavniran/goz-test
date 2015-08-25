@@ -225,6 +225,12 @@
 	#site-logo::after {
 		width: 80px;
 	}
+
+	.content-pic.left, .content-pic.right {
+		float:none;
+		margin-left:auto;
+		margin-right:auto;
+	}
 }
 
 @media (min-height: 800px) {
