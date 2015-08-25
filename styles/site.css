@@ -51,6 +51,12 @@ body {
 	background-size: contain;
 	background-repeat: no-repeat;
 	cursor: pointer;
+
+	transition: background 1s;
+}
+
+.mobile-menu-open #site-logo{
+	background-image: url("../images/gozly-black-overlay-transparent-bg-small.png");
 }
 
 #home-content-container {
