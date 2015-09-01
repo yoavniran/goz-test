@@ -331,7 +331,7 @@ li.main-menu-item {
 
 #content-read-status{
 	content:"";
-	height:0.5em;
+	height:0.4em;
 	left:0px;
 	position: absolute;
 	bottom: 0px;
@@ -509,8 +509,8 @@ li.main-menu-item {
 
 .content-pic{
 	margin: 12px auto 5px auto;
-	max-height: 200px;
-	max-width: 200px;
+	max-height: 240px;
+	max-width: 80%;
 	/*cursor: pointer; */
 	-webkit-box-shadow: -1px -1px 15px 9px rgba(89,84,89,0.61);
 	-moz-box-shadow: -1px -1px 15px 9px rgba(89,84,89,0.61);
