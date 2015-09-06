@@ -8,13 +8,14 @@
 		selectedContentId, siteContent;
 
 	function init() {
-		initSiteContent();
+		// initSiteContent();
 		doIntroAnimation();
 		initUi();
-		copyMobileMenuItems();
-		registerEvents();
+		// copyMobileMenuItems();
+		// registerEvents();
 
 		//$("#screen-res").append("height=" + screen.height + " - width=" + screen.width);
+		document.location = "http://www.gozali-montessori.net";
 	}
 
 	function initSiteContent() {
@@ -36,9 +37,9 @@
 				title: "מה אוכלים",
 				textElement: "#meals-content"
 			},
-			vacations: {
-				title: "לוח חופשות",
-				textElement: "#vacations-content"
+			community: {
+				title: "גוזלי למען הקהילה",
+				textElement: "#community-content"
 			},
 			day: {
 				title: "פעילות המשפחתון",
@@ -80,7 +81,8 @@
 		ui.contentTitle = $("#page-content-container h2");
 		ui.homeContent = $("#home-content-container");
 		ui.mobileMenu = $("#mobile-menu");
-		ui.contactButton = $(".phone-container");
+		ui.contactButton = $("#page-tab-phone");
+		ui.fbButton = $("#page-tab-fb");
 		ui.contactMap = $("#contact-map-img");
 		ui.readStatus = $("#content-read-status");
 	}
@@ -90,6 +92,7 @@
 		ui.menuItems.click(onMenuItemClick);
 		ui.mobileMenu.click(onMobileMenuClick);
 		ui.contactButton.click(onContactClick);
+		ui.fbButton.click(onFacebookClick);
 		ui.contactMap.click(onContactMapClick);
 
 		ui.overlay.close.click(onOverlayCloseClick);
@@ -106,7 +109,7 @@
 
 			toggleDelayedElement(".intro-delayed", true);
 
-		}, 200);
+		}, 150);
 	}
 
 	function toggleDelayedElement(selector, show, quickHide) {
@@ -131,7 +134,16 @@
 		}
 	}
 
+	function onFacebookClick(e){
+		var target = $(e.target || e.srcElement);
+		var href = target.data("href");
+		window.open(href);
+
+		ga("send", "event", "action", "fb-page-button-click", "user-interaction");
+	}
+
 	function onContactClick(){
+		ga("send", "event", "action", "contact-button-click", "user-interaction");
 		onMenuItemClick.call(this);
 	}
 
@@ -155,14 +167,12 @@
 	}
 
 	function hideOverlay(){
-
 		ui.overlay.container.css({"opacity": "0", "left": "-110px", "width": "100px"}); //, "width": "100%"});
-
 	}
 
 	function onContactMapClick(){
 
-			ga("send", "event", "action", "contant-map-open", "maps");
+			ga("send", "event", "action", "contant-map-open", "user-interaction");
 
 			showOverlay("contactMap", "<span class=\"map-loading\">טוען...</span><iframe " 
 						  + "width=\"300\" "  
@@ -283,6 +293,7 @@
 	}
 
 	function onLogoClick() {
+		ga("send", "event", "action", "site-logo-click", "user-interaction");
 		hideSelectedContent();
 		toggleDelayedElement(ui.homeContent, true);		
 	}
